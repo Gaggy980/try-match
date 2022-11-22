@@ -84,7 +84,7 @@ body{
   color: white;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 428px) {
   body{
     background-size: cover;
     width: 100vw;
@@ -106,3 +106,4 @@ body{
     font-size: 1.5rem;
   }
 }
+

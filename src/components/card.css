@@ -45,7 +45,7 @@
     transition-delay: 0s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 428px) {
   .front{
     width: 5rem;
     height: 5rem;
@@ -53,6 +53,16 @@
   .back{
     width: 5rem;
     height:5rem;
+  }
+}
+@media (max-width: 375px) {
+  .front{
+    width: 4rem;
+    height: 4rem;
+  }
+  .back{
+    width: 4rem;
+    height:4rem;
   }
 }
 
