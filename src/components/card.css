@@ -13,7 +13,7 @@
 
   }
   .back{
-    background-image: url("./back.png");
+    background-image: url("../../back.png");
     width:10rem;
     height:10rem;
     background-size: cover;
