@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&display=swap');
+
+
+:root {
+  font-family: 'Alexandria', sans-serif;  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+.game-window{
+  max-width: 860px;
+  margin: 40px auto;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: flex-start;
+  min-width: 320px;
+  min-height: 100vh;
+}
