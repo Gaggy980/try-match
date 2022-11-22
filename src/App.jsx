@@ -5,14 +5,14 @@ import {IoMdSnow} from 'react-icons/io'
 import {HiMenuAlt1} from 'react-icons/hi'
 
 const cardImages = [
-  { src: "./src/images/elsa.png", matched: false },
-  { src: "./src/images/anna.png", matched: false },
-  { src: "./src/images/gecko.png", matched: false },
-  { src: "./src/images/hans.png", matched: false },
-  { src: "./src/images/kristoff.png", matched: false },
-  { src: "./src/images/sven.png", matched: false },
-  { src: "./src/images/olaf.png", matched: false },
-  { src: "./src/images/troll.png", matched: false },
+  { src: "./elsa.png", matched: false },
+  { src: "./anna.png", matched: false },
+  { src: "./gecko.png", matched: false },
+  { src: "./hans.png", matched: false },
+  { src: "./kristoff.png", matched: false },
+  { src: "./sven.png", matched: false },
+  { src: "./olaf.png", matched: false },
+  { src: "./troll.png", matched: false },
 ];
 
 function App() {
