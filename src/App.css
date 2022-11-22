@@ -1,0 +1,95 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+*, :before, :after {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url("../public/bgfrozen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;}
+
+
+.title{
+  color: #6BB2D6;
+  font-size: 3rem;
+  margin: 1rem 2rem;
+  text-shadow: 2px 2px 5px black;
+}
+
+
+.play-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  gap: 1rem;
+  margin: 3rem auto;
+  font-size: 2em;
+  font-weight: bold;
+  border: 4px solid #B5EFE8;
+  padding: 0.8rem 2rem;
+  background-color: #242070;
+  border-radius: 2rem;
+  color: #B5EFE8;
+  cursor: pointer;
+}
+
+
+.play-btn:hover{
+  background-color: #B5EFE8;
+  color: #242070;
+  border: 4px dotted #665c6f;
+}
+
+.cards-box{
+  position: relative;
+  background-color:rgb(36,32,112,0.70);
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  box-shadow: 0.5rem 1rem 1rem black;
+  z-index: 0;
+
+}
+.scores-box{
+  display: flex;
+  justify-content: space-between;
+  margin: -1.5rem 3rem
+}
+.turn-display{
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 4px 4px 5px black;
+}
+.scoreboard-display{
+  display: flex;
+  font-size: 1rem;
+  color: #6BB2D6;
+  text-shadow: 2px 2px 5px black;
+}
+.scoreboard-display:hover{
+  color: white;
+}
+
+@media (max-width: 500px) {
+  body{
+    background-size: cover;
+    width: 100;
+  }
+  .cards-box{
+    grid-gap: 15px;
+  }
+}
