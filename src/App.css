@@ -87,9 +87,21 @@ body{
 @media (max-width: 500px) {
   body{
     background-size: cover;
-    width: 100;
+    width: 100vw;
   }
   .cards-box{
-    grid-gap: 15px;
+    width: 100vw;	
+    grid-gap: 8px;
+  }
+  .title{
+    font-size: 1.8rem;
+  }
+  .play-btn{
+    width: 10rem;
+    font-size: 1rem;
+    padding: 0.3rem 2rem;
+  }
+  .turn-display{
+    font-size: 1.5rem;
   }
 }
