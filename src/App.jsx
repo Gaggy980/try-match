@@ -23,8 +23,8 @@ function App() {
     setCardImages(cardsFrozen)
     shuffleCards()
     setColorPallete("#242070", "#B5EFE8", "rgb(36,32,112,0.70)")
-    toggleBack('url("./back.png")')
-    toggleBgImage('url("./bgfrozen.png")')
+    toggleBack('url("back.png")')
+    toggleBgImage('url("bgfrozen.png")')
     setHeadTitle("FROZEN Memory")
     setHidden(true)
   }
@@ -32,8 +32,8 @@ function App() {
     setCardImages(cardsHeroes)
     shuffleCards()
     setColorPallete("#390100", "#D30C0F", "rgb(57,1,0,0.9)")
-    toggleBack('url("./backHeros.png")')
-    toggleBgImage('url("./MarvelHeroes.png")')
+    toggleBack('url("backHeros.png")')
+    toggleBgImage('url("MarvelHeroes.png")')
     setHeadTitle("HEROES Memory")
     setHidden(true)
 

@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/back.png
+src/backHeros.png
+src/bgfrozen.png
+src/MarvelHeroes.png
+public/back.png
+public/backHeros.png
+public/bgfrozen.png
+public/MarvelHeroes.png
