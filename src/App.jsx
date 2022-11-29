@@ -3,17 +3,9 @@ import "./App.css";
 import Card from "./components/Card";
 import {IoMdSnow} from 'react-icons/io'
 import {HiMenuAlt1} from 'react-icons/hi'
+import {cardsFrozen, cardsHeroes} from './database'
 
-const cardImages = [
-  { src: "./elsa.png", matched: false },
-  { src: "./anna.png", matched: false },
-  { src: "./gecko.png", matched: false },
-  { src: "./hans.png", matched: false },
-  { src: "./kristoff.png", matched: false },
-  { src: "./sven.png", matched: false },
-  { src: "./olaf.png", matched: false },
-  { src: "./troll.png", matched: false },
-];
+
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -21,6 +13,45 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [cardImages, setCardImages] = useState([]);
+  const [headTitle, setHeadTitle]  = useState("");
+  const [hidden, setHidden] = useState(false);
+
+
+  // set cards theme to Heroes or Frozen
+  const startFrozen = () => {
+    setCardImages(cardsFrozen)
+    shuffleCards()
+    setColorPallete("#242070", "#B5EFE8", "rgb(36,32,112,0.70)")
+    toggleBack('url("./back.png")')
+    toggleBgImage('url("./bgfrozen.png")')
+    setHeadTitle("FROZEN Memory")
+    setHidden(true)
+  }
+  const startHeroes = () => {
+    setCardImages(cardsHeroes)
+    shuffleCards()
+    setColorPallete("#390100", "#D30C0F", "rgb(57,1,0,0.9)")
+    toggleBack('url("./backHeros.png")')
+    toggleBgImage('url("./MarvelHeroes.png")')
+    setHeadTitle("HEROES Memory")
+    setHidden(true)
+
+  }
+  // update back of the cards css variable
+  const toggleBack = (bgPic) => {
+    document.documentElement.style.setProperty('--bg-pic',bgPic)
+  }
+  // update background image css variable
+  const toggleBgImage = (bgImg) => {
+    document.documentElement.style.setProperty('--bg-img',bgImg)
+  }
+  const setColorPallete = (colorPrim,colorSec,colorPrimTran) => {
+    document.documentElement.style.setProperty('--color-prim',colorPrim)
+    document.documentElement.style.setProperty('--color-sec',colorSec)
+    document.documentElement.style.setProperty('--color-prim-trans',colorPrimTran)
+  }
+  
 
   // shuffle cards
   const shuffleCards = () => {
@@ -60,8 +91,6 @@ function App() {
     }
   }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-
   // reset choices and update turn
   const resetTurn = () => {
     setChoiceOne(null);
@@ -70,14 +99,18 @@ function App() {
     setDisabled(false);
   };
 
-  // start game automaticly
-  useEffect(() => {
-    shuffleCards();
-  }, []);
+  // // start game automaticly
+  // useEffect(() => {
+  //   shuffleCards();
+  // }, []);
 
   return (
     <div className="game-window">
-      <h1 className="title">FROZEN Memory</h1>
+      <div className={hidden ? "hidden"   : "theme-box"}>
+        <button onClick={startFrozen}>For Girls</button>
+        <button onClick={startHeroes}>For Boys</button>
+      </div>
+      <h1 className="title">{headTitle}</h1>
       <div onClick={shuffleCards} className="play-btn">
        <IoMdSnow size={30}/> Play <IoMdSnow size={30}/>
       </div>
