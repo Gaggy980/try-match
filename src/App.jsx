@@ -24,7 +24,7 @@ function App() {
     shuffleCards()
     setColorPallete("#242070", "#B5EFE8", "rgb(36,32,112,0.70)")
     toggleBack('url("./back.png")')
-    toggleBgImage('url("./public/bgfrozen.png")')
+    toggleBgImage('url("./bgfrozen.png")')
     setHeadTitle("FROZEN Memory")
     setHidden(true)
   }
