@@ -5,7 +5,7 @@
 .front{
     position:absolute;
     left: 0;
-    border: 2px solid #82327D;
+    border: 2px solid var(--color-sec);
     width: 10rem;
     height: 10rem;
     border-radius: 1rem;
@@ -13,7 +13,7 @@
 
   }
   .back{
-    background-image: url("../../back.png");
+    background-image: var(--bg-pic);
     width:10rem;
     height:10rem;
     background-size: cover;

@@ -8,6 +8,14 @@
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+
+  --bg-pic: url("");
+  --bg-img: url("");
+  --color-prim: #242070;
+  --color-sec: #B5EFE8;
+  --color-prim-trans: rgb(36,32,112,0.70);
+
+
 }
 .game-window{
   max-width: 860px;
