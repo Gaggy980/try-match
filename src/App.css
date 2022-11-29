@@ -50,12 +50,12 @@ body {
 }
 .theme-box button:nth-child(1){
 background-color: rgb(211,12,15,0.4);
-background-image: url('back.png');
+background-image: url('./back.png');
 background-size: cover;
 }
 .theme-box button:nth-child(2){
   background-color: rgb(1,46,109,0.5);
-  background-image: url('MarvelHeroes.png');
+  background-image: url('./MarvelHeroes.png');
   background-size: cover;
   background-position: center;
   background-opacity: 0.2;
