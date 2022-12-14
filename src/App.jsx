@@ -1,19 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
-import {IoMdSnow} from 'react-icons/io'
-import {HiMenuAlt1} from 'react-icons/hi'
-
-const cardImages = [
-  { src: "./elsa.png", matched: false },
-  { src: "./anna.png", matched: false },
-  { src: "./gecko.png", matched: false },
-  { src: "./hans.png", matched: false },
-  { src: "./kristoff.png", matched: false },
-  { src: "./sven.png", matched: false },
-  { src: "./olaf.png", matched: false },
-  { src: "./troll.png", matched: false },
-];
+import { HiMenuAlt1 } from "react-icons/hi";
+import { cardsFrozen, cardsHeroes } from "./database";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -21,6 +10,38 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [cardImages, setCardImages] = useState([]);
+  const [headTitle, setHeadTitle] = useState("");
+  const [hidden, setHidden] = useState(false);
+
+  // set cards theme to Heroes or Frozen
+  const startFrozen = () => {
+    setCardImages(cardsFrozen);
+    setColorPallete("#242070", "#B5EFE8", "rgb(36,32,112,0.70)");
+    setHeadTitle("FROZEN Memory");
+    setHidden(true);
+    shuffleCards();
+  };
+  const startHeroes = () => {
+    setCardImages(cardsHeroes);
+    setColorPallete("#390100", "#D30C0F", "rgb(57,1,0,0.9)");
+    setHeadTitle("HEROES Memory");
+    setHidden(true);
+    shuffleCards();
+  };
+  const setBg = () => {
+    if (headTitle === "HEROES Memory") {
+      return "h";
+    } else {
+      return "f";
+    }
+  };
+
+  const setColorPallete = (colorPrim, colorSec, colorPrimTran) => {
+    document.documentElement.style.setProperty("--color-prim", colorPrim);
+    document.documentElement.style.setProperty("--color-sec", colorSec);
+    document.documentElement.style.setProperty("--color-prim-trans",colorPrimTran);
+  };
 
   // shuffle cards
   const shuffleCards = () => {
@@ -60,8 +81,6 @@ function App() {
     }
   }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-
   // reset choices and update turn
   const resetTurn = () => {
     setChoiceOne(null);
@@ -70,31 +89,40 @@ function App() {
     setDisabled(false);
   };
 
-  // start game automaticly
+  //start game automaticly
   useEffect(() => {
     shuffleCards();
   }, []);
 
   return (
-    <div className="game-window">
-      <h1 className="title">FROZEN Memory</h1>
-      <div onClick={shuffleCards} className="play-btn">
-       <IoMdSnow size={30}/> Play <IoMdSnow size={30}/>
-      </div>
-      <div className="scores-box">
-        <h2 className="turn-display">Turns: {turns}</h2>
-        <h2 className="scoreboard-display">ScoreBoard <HiMenuAlt1 size={20}/></h2>
-      </div>
-      <div className="cards-box">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
+    <div className="game-box">
+      <div className={setBg()}>
+        <div className={hidden ? "hidden" : "theme-box"}>
+          <button onClick={startFrozen}>For Girls</button>
+          <button onClick={startHeroes}>For Boys</button>
+        </div>
+        <h1 className="title">{headTitle}</h1>
+        <div onClick={shuffleCards} className="play-btn">
+          Play
+        </div>
+        <div className="scores-box">
+          <h2 className="turn-display">Turns: {turns}</h2>
+          <h2 className="scoreboard-display">
+            ScoreBoard <HiMenuAlt1 size={20} />
+          </h2>
+        </div>
+        <div className="cards-box">
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+              headTitle={headTitle}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

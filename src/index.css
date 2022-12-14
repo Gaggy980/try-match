@@ -1,23 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&display=swap");
 
-
-:root {
-  font-family: 'Alexandria', sans-serif;  font-size: 16px;
+#root {
+  font-family: "Alexandria", sans-serif;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  display: flex;
+  flex-direction: column;
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
-.game-window{
-  max-width: 860px;
-  margin: 40px auto;
+:root {
+  --color-prim: #242070;
+  --color-sec: #b5efe8;
+  --color-prim-trans: rgb(36, 32, 112, 0.7);
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
   display: flex;
-  place-items: flex-start;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

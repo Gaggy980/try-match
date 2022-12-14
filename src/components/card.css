@@ -1,69 +1,59 @@
-.card{
-    position: relative;
-
+.card {
+  position: relative;
 }
-.front{
-    position:absolute;
-    left: 0;
-    border: 2px solid #82327D;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 1rem black;
-
-  }
-  .back{
-    background-image: url("../../back.png");
-    width:10rem;
-    height:10rem;
-    background-size: cover;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 1rem black;
-
-  }
+.front {
+  position: absolute;
+  left: 0;
+  border: 2px solid var(--color-sec);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem black;
+}
+.back {
+  width: 10rem;
+  height: 10rem;
+  background-size: cover;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem black;
+}
+.he {
+  background-image: url("./backHeros.png");
+}
+.fr {
+  background-image: url("./back.png");
+}
 /* front of the card */
- .card .front{
-    transform: rotateX(90deg);
-    transition: all ease-in 0.2s;
-    position: absolute;
+.card .front {
+  transform: rotateX(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
 }
-.flipped .front{
-    transform: rotateX(0deg);
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition-delay: 0.2s;
-   
-} 
+.flipped .front {
+  transform: rotateX(0deg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition-delay: 0.2s;
+}
 /*back of the card */
-.card .back{
-    transition: all ease-in 0.2s;
-    transition-delay: 0.2s;
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
 }
-.flipped .back{
-    transform: rotateX(90deg);
-    transition-delay: 0s;
+.flipped .back {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
 }
 
-@media (max-width: 428px) {
-  .front{
+@media (max-width: 600px) {
+  .front {
     width: 5rem;
     height: 5rem;
   }
-  .back{
+  .back-f,
+  .back {
     width: 5rem;
-    height:5rem;
+    height: 5rem;
   }
 }
-@media (max-width: 375px) {
-  .front{
-    width: 4rem;
-    height: 4rem;
-  }
-  .back{
-    width: 4rem;
-    height:4rem;
-  }
-}
-
-
