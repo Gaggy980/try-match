@@ -23,6 +23,7 @@
 .fr {
   background-image: url("./back.png");
 }
+
 /* front of the card */
 .card .front {
   transform: rotateX(90deg);
@@ -51,7 +52,7 @@
     width: 5rem;
     height: 5rem;
   }
-  .back-f,
+ 
   .back {
     width: 5rem;
     height: 5rem;

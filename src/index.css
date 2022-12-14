@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&display=swap");
 
-#root {
+:root {
   font-family: "Alexandria", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -19,11 +19,12 @@
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-}
-:root {
+
   --color-prim: #242070;
-  --color-sec: #b5efe8;
-  --color-prim-trans: rgb(36, 32, 112, 0.7);
+  --color-sec: #B5EFE8;
+  --color-prim-trans: rgb(36,32,112,0.70);
+
+
 }
 
 html,
